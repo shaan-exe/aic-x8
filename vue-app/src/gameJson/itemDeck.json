@@ -1,0 +1,63 @@
+[
+
+    {
+
+        "name": "Dodgy Soup",
+
+        "description": "Sketchy, but definitely worth drinking",
+
+        "heroStatAffected": "evasion",
+
+        "expression": "evasion * 2"
+
+    },
+
+    {
+
+        "name": "Chaos the Darksword",
+
+        "description": "The legendary talking sword capable of slaying Fiends",
+
+        "heroStatAffected": "attack",
+
+        "expression": "attack + 10"
+
+    },
+
+    {
+
+        "name": "Rabbit Stew",
+
+        "description": "Finally caught that wascally wabbit",
+
+        "heroStatAffected": "health",
+
+        "expression": "health + 20"
+
+    },
+
+    {
+
+        "name": "Hearty Manga Meat",
+
+        "description": "Why is there a cartoonishly large bone in it?",
+
+        "heroStatAffected": "health",
+
+        "expression": "health + (2 * attack)"
+
+    },
+
+    {
+
+        "name": "Nest of Wasps",
+
+        "description": "Who would attack you when you're wearing a nest of wasps?",
+
+        "heroStatAffected": "defense",
+
+        "expression": "defense + (health / 2)"
+
+    }
+
+]

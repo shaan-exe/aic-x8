@@ -1,0 +1,117 @@
+[
+
+    {
+
+        "name": "Squidman",
+
+        "description": "A squid with two human legs sticking out from undereath, allowing it to walk on land",
+
+        "portraitURL": "https://static.wikitide.net/alicesoftwiki/2/23/Squidman-03.png",
+
+        "actions": [
+
+            {
+
+                "actionName": "Tentacle Punch",
+
+                "description": "Squidman flails its tentacles at our hero, dealing minimal damage",
+
+                "heroStatAffected": "health",
+
+                "expression": "health - randomInt(3, 8)"
+
+            },
+
+            {
+
+                "actionName": "Ink Shot",
+
+                "description": "Squidman squirts some of its ink, reducing evasion",
+
+                "heroStatAffected": "evasion",
+
+                "expression": "evasion - 4"
+
+            }
+
+        ]
+
+    },
+
+    {
+
+        "name": "Green Hanny",
+
+        "description": "A mysterious, magical creature made of clay",
+
+        "portraitURL": "https://static.wikitide.net/alicesoftwiki/b/bb/Hanny-powers.png",
+
+        "actions": [
+
+            {
+
+                "name": "Hanny Flash",
+
+                "description": "Pierces through defenses, dealing a set amount of damage",
+
+                "heroStatAffected": "health",
+
+                "expression": "health - 10"
+
+            },
+
+            {
+
+                "name": "Trident Poke",
+
+                "description": "A quick stab with a trident",
+
+                "heroStatAffected": "health",
+
+                "expression": "health - randomInt(8, 12)"
+
+            }
+
+        ]
+
+    },
+
+    {
+
+        "name": "Okayu Fever",
+
+        "description": "A being resembling a statue with many arms and a dangerous poison",
+
+        "portraitURL": "https://static.wikitide.net/alicesoftwiki/0/02/Okayu-Fever-03.png",
+
+        "actions": [
+
+            {
+
+                "name": "Okayu Virus",
+
+                "description": "A potent toxin that reduces defense",
+
+                "heroStatAffected": "defense",
+
+                "expression": "defense / 2"
+
+            },
+
+            {
+
+                "name": "Hand Crush",
+
+                "description": "The Fever crushes you between its palms",
+
+                "heroStatAffected": "health",
+
+                "expression": "health - randomInt(15, 20)"
+
+            }
+
+        ]
+
+    }
+
+]

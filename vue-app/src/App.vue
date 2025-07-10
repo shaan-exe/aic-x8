@@ -1,20 +1,28 @@
 <script>
-import heroJson from './hero.json'
-import monsterJson from './monsterDeck.json'
-import itemJson from './itemDeck.json'
+import heroJson from './gameJson/hero.json'
+import monsterJson from './gameJson/monsterDeck.json'
+import itemJson from './gameJson/itemDeck.json'
 import * as math from 'mathjs';
 
-// [import components here]
+import ItemDrawButton from './components/ItemDrawButton.vue';
+import MonsterDrawButton from './components/MonsterDrawButton.vue';
+import MonstersList from './components/MonstersList.vue';
+
 // remember to register them in the components property below!
 
 export default {
   components: {
+    ItemDrawButton,
+    MonsterDrawButton,
+    MonstersList
   },
   data() {
     return {
       hero: heroJson,
       itemDeck: itemJson,
-      monsterDeck: monsterJson
+      monsterDeck: monsterJson,
+      itemsHand: [],
+      monstersHand:[]
     }
   },
   methods: {
@@ -24,6 +32,9 @@ export default {
         let randomAction = math.randomInt(0, monsterCard.actions.length - 1)
         let action = monsterCard.actions[randomAction]
         this.hero[action.heroStatAffected] = math.evaluate(action.expression, this.hero)
+        console.log(this.monstersHand)
+        this.monstersHand.push(monsterCard)
+        console.log(this.monstersHand)
         return monsterCard
       } else {
         return null
@@ -50,6 +61,14 @@ export default {
     }
   },
   computed: {
+    monstersRemaining(){
+      console.log(this.monsterDeck.length)
+      return this.monsterDeck.length
+    },
+    itemsRemaining(){
+      console.log(this.itemDeck.length)
+      return this.itemDeck.length
+    }
   },
   mounted() {
   }
@@ -58,11 +77,14 @@ export default {
 
 <template>
   <header>
-    <h1>[Game Name Here]</h1>
+    <h1></h1>
   </header>
 
   <main>
-    <!-- components here -->
+    <ItemDrawButton @click="drawItem" :itemsremaining="itemsRemaining"></ItemDrawButton>
+
+    <MonsterDrawButton @click="drawMonster" :monstersremaining="monstersRemaining"></MonsterDrawButton>
+    <MonstersList v-if="monstersHand" :monstersHand="monstersHand"></MonstersList>
   </main>
 
 </template>
