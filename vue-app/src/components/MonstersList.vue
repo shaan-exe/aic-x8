@@ -19,8 +19,20 @@ export default {
 </script>
 
 <template>
-    <Monster v-for="monster in monstersHand" :monster="monster"></Monster>
+    <section id="monsterSection">
+    <Monster class="Monster" v-for="monster in monstersHand" :monster="monster"></Monster>
+    </section>
 
 </template>
 
-<style scoped></style>
+<style scoped>
+#monsterSection{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr;
+
+}
+.Monster{
+    grid-row: 1/2;
+}
+</style>

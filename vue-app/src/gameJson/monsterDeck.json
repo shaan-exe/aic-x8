@@ -1,42 +1,6 @@
 [
 
-    {
-
-        "name": "Squidman",
-
-        "description": "A squid with two human legs sticking out from undereath, allowing it to walk on land",
-
-        "portraitURL": "https://static.wikitide.net/alicesoftwiki/2/23/Squidman-03.png",
-
-        "actions": [
-
-            {
-
-                "actionName": "Tentacle Punch",
-
-                "description": "Squidman flails its tentacles at our hero, dealing minimal damage",
-
-                "heroStatAffected": "health",
-
-                "expression": "health - randomInt(3, 8)"
-
-            },
-
-            {
-
-                "actionName": "Ink Shot",
-
-                "description": "Squidman squirts some of its ink, reducing evasion",
-
-                "heroStatAffected": "evasion",
-
-                "expression": "evasion - 4"
-
-            }
-
-        ]
-
-    },
+   
 
     {
 
@@ -107,6 +71,43 @@
                 "heroStatAffected": "health",
 
                 "expression": "health - randomInt(15, 20)"
+
+            }
+
+        ]
+
+    },
+    {
+
+        "name": "Squidman",
+
+        "description": "A squid with two human legs sticking out from undereath, allowing it to walk on land",
+
+        "portraitURL": "https://static.wikitide.net/alicesoftwiki/2/23/Squidman-03.png",
+
+        "actions": [
+
+            {
+
+                "actionName": "Tentacle Punch",
+
+                "description": "Squidman flails its tentacles at our hero, dealing minimal damage",
+
+                "heroStatAffected": "health",
+
+                "expression": "health - randomInt(3, 8)"
+
+            },
+
+            {
+
+                "actionName": "Ink Shot",
+
+                "description": "Squidman squirts some of its ink, reducing evasion",
+
+                "heroStatAffected": "evasion",
+
+                "expression": "evasion - 4"
 
             }
 

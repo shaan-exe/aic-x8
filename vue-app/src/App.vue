@@ -7,14 +7,18 @@ import * as math from 'mathjs';
 import ItemDrawButton from './components/ItemDrawButton.vue';
 import MonsterDrawButton from './components/MonsterDrawButton.vue';
 import MonstersList from './components/MonstersList.vue';
+import ItemList from './components/ItemList.vue';
+import HeroCard from './components/Hero.vue'
 
-// remember to register them in the components property below!
+
 
 export default {
   components: {
     ItemDrawButton,
     MonsterDrawButton,
-    MonstersList
+    MonstersList,
+    ItemList,
+    HeroCard
   },
   data() {
     return {
@@ -45,6 +49,9 @@ export default {
       if (itemCard) {
         console.log("item", itemCard)
         this.hero[itemCard.heroStatAffected] = math.evaluate(itemCard.expression, this.hero)
+        console.log(this.itemsHand)
+        this.itemsHand.push(itemCard)
+        console.log(this.itemsHand)
         return itemCard
       } else {
         return null
@@ -58,6 +65,10 @@ export default {
       } else {
         // deck is empty! HANDLE IT!
       }
+    },
+    updateHeroStats(expression){
+      
+      this.hero;
     }
   },
   computed: {
@@ -84,9 +95,18 @@ export default {
     <ItemDrawButton @click="drawItem" :itemsremaining="itemsRemaining"></ItemDrawButton>
 
     <MonsterDrawButton @click="drawMonster" :monstersremaining="monstersRemaining"></MonsterDrawButton>
+    <section id="heroSection">
+    <HeroCard id="heroCard" :hero="hero"></HeroCard><ItemList @updateHero="(exp)=>{updateHeroStats(exp)}" v-if="itemsHand" :itemsHand="itemsHand"></ItemList>
+  </section>
+    
     <MonstersList v-if="monstersHand" :monstersHand="monstersHand"></MonstersList>
+    
   </main>
 
 </template>
 
-<style scoped></style>
+<style scoped>
+ *{
+  margin:5px;
+ }
+</style>
